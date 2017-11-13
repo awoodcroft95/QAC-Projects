@@ -13,33 +13,37 @@ namespace ResultsCalculator
             Results peter, smith;
             peter = new Results();
             smith = new Results();
-            peter.physics(150);
-            peter.chemistry(150);
+            peter.physics(20);
+            peter.chemistry(50);
             peter.maths(150);
 
             smith.physics(91);
             smith.chemistry(91);
             smith.maths(91);
 
+            Console.WriteLine("Peter's Results:");
             peter.showResults();
+            Console.WriteLine("Smith's Results:");
             smith.showResults();
             Console.Read();
 
-            
+
         }
     }
 
     class Results
     {
         private int phy, che, mat;
-        Boolean validInput = true;
+        private List<string> failedClasses = new List<string>();
+        private Boolean validInput = true;
 
         public void physics(int a)
         {
             if (a >= 0 && a <= 150)
             {
                 phy = a;
-            } else
+            }
+            else
             {
                 Console.WriteLine("Invalid Physics Mark");
                 validInput = false;
@@ -84,14 +88,28 @@ namespace ResultsCalculator
                 {
                     numberOfPasses++;
                 }
+                else
+                {
+                    failedClasses.Add("Physics Failed");
+                }
                 if (((float)che * 100 / 150) > 60)
                 {
                     numberOfPasses++;
+                }
+                else
+                {
+                    failedClasses.Add("Chemistry Failed");
                 }
                 if (((float)mat * 100 / 150) > 60)
                 {
                     numberOfPasses++;
                 }
+                else
+                {
+                    failedClasses.Add("Maths Failed");
+                }
+
+                failedClasses.ForEach(Console.WriteLine);
 
                 if (numberOfPasses == 3)
                 {
@@ -100,20 +118,24 @@ namespace ResultsCalculator
 
                     Console.Write("Total marks: " + total + "\n");
                     Console.Write("Percentage: " + per + "\n");
-                } else if (numberOfPasses == 2)
+                }
+                else if (numberOfPasses == 2)
                 {
                     Console.WriteLine("Retake exam");
-                } else if (numberOfPasses == 1)
+                }
+                else if (numberOfPasses == 1)
                 {
                     Console.WriteLine("Repeat the course");
-                }else
+                }
+                else
                 {
                     Console.WriteLine("Go home");
                 }
-            } else
+            }
+            else
             {
                 Console.Write("No Results Available");
-            }  
+            }
         }
     }
 }

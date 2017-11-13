@@ -12,7 +12,7 @@ namespace Strings
         {
             English e = new English();
             e.words("I am in QA");
-            e.find("I am, going, am, to London", "am");
+            e.find("I am london going to london", "london");
             Console.Read();
         }
     }
@@ -29,11 +29,12 @@ namespace Strings
         {
             int substringLength = findWhat.Length;
             int foundCount=0;
-            for (int i = 0; i < message.Length - substringLength; i++)
+            for (int i = 0; i < message.Length - substringLength + 1; i++)
             {
                 if (message.Substring(i, substringLength) == findWhat)
                 {
                     foundCount++;
+                    i = i + substringLength;
                 }
             }
             Console.WriteLine(foundCount);

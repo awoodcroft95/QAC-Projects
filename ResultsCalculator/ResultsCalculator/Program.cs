@@ -26,8 +26,6 @@ namespace ResultsCalculator
             Console.WriteLine("Smith's Results:");
             smith.showResults();
             Console.Read();
-
-
         }
     }
 

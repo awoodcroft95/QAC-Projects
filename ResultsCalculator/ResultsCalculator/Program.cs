@@ -34,10 +34,12 @@ namespace ResultsCalculator
         private int phy, che, mat;
         private List<string> failedClasses = new List<string>();
         private Boolean validInput = true;
+        private int maxMark = 150;
+        private int minMark = 0;
 
         public void physics(int a)
         {
-            if (a >= 0 && a <= 150)
+            if (a >= minMark && a <= maxMark)
             {
                 phy = a;
             }
@@ -50,7 +52,7 @@ namespace ResultsCalculator
 
         public void chemistry(int b)
         {
-            if (b >= 0 && b <= 150)
+            if (b >= minMark && b <= 150)
             {
                 che = b;
             }
@@ -63,7 +65,7 @@ namespace ResultsCalculator
 
         public void maths(int c)
         {
-            if (c >= 0 && c <= 150)
+            if (c >= minMark && c <= 150)
             {
                 mat = c;
             }

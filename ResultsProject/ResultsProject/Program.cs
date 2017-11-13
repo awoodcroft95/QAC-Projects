@@ -138,7 +138,7 @@ class Results
                 total = phy + che + mat;
                 per = (float)total * 100 / 450;
                 Console.Write("Total marks: " + total + "\n");
-                Console.Write("Percentage: " + per + "\n");
+                Console.Write("Percentage: " + per + "%\n");
             }
             else if (numberOfPasses == 2)
             {

@@ -12,6 +12,7 @@ namespace Strings
         {
             English e = new English();
             e.words("I am in QA");
+            e.find("I am, going, am, to London", "am");
             Console.Read();
         }
     }
@@ -21,7 +22,21 @@ namespace Strings
         public void words(string na)
         {
             string[] words = na.Split(' ');
-            Console.Write(words.Length);
+            Console.WriteLine(words.Length);
+        }
+
+        public void find(string message, string findWhat)
+        {
+            int substringLength = findWhat.Length;
+            int foundCount=0;
+            for (int i = 0; i < message.Length - substringLength; i++)
+            {
+                if (message.Substring(i, substringLength) == findWhat)
+                {
+                    foundCount++;
+                }
+            }
+            Console.WriteLine(foundCount);
         }
     }
 }

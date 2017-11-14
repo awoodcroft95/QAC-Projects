@@ -26,13 +26,9 @@ namespace RealCalculator
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void numberClicked(Object b, EventArgs e)
         {
-            getInputAndDisplay(1);
-        }
-
-        private void getInputAndDisplay(int a)
-        {
+            Button btn = (Button)b;
             if (calculationCompleted == true)
             {
                 calculationCompleted = false;
@@ -41,24 +37,25 @@ namespace RealCalculator
             if (isOperatorSelected)
             {
                 textBox1.Text = "";
-                num2String += a;
-                textBox1.Text += a;
-            } else
-            {
-                num1String += a;
-                textBox1.Text += a;
+                textBox1.Text += btn.Text;
             }
+            else
+            {
+                textBox1.Text += btn.Text;
+            }
+
         }
 
-        private void getInputAndDisplay(string a)
+        private void signClicked(Object b, EventArgs e)
         {
-            textBox1.Text += a;
-            if (!isOperatorSelected && num1String != "")
+            Button btn = (Button)b;
+            if (!isOperatorSelected && textBox1.Text != "")
             {
-                operatorInput += a;
+                num1String = textBox1.Text;
+                operatorInput += btn.Text;
                 isOperatorSelected = true;
             }
-            else if (num1String == "")
+            else if (textBox1.Text == "")
             {
                 MessageBox.Show("Please enter some numbers before selecting an operator.");
                 textBox1.Text = "";
@@ -69,86 +66,12 @@ namespace RealCalculator
                 textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1);
             }
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            getInputAndDisplay(2);
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            getInputAndDisplay(3);
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            getInputAndDisplay(4);
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            getInputAndDisplay(5);
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            getInputAndDisplay(6);
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            getInputAndDisplay(7);
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            getInputAndDisplay(8);
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            getInputAndDisplay(9);
-        }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-            getInputAndDisplay(0);
-        }
-
-        private void buttonPlus_Click(object sender, EventArgs e)
-        {
-            textBox1.Text = "";
-            getInputAndDisplay("+");
-            operatorInput = "+";
-        }
-
-        private void buttonMinus_Click(object sender, EventArgs e)
-        {
-            textBox1.Text = "";
-            getInputAndDisplay("-");
-            operatorInput = "-";
-        }
-
-        private void buttonMult_Click(object sender, EventArgs e)
-        {
-            textBox1.Text = "";
-            getInputAndDisplay("x");
-            operatorInput = "x";
-        }
-
-        private void buttonDiv_Click(object sender, EventArgs e)
-        {
-            textBox1.Text = "";
-            getInputAndDisplay("/");
-            operatorInput = "/";
-        }
-
         private void buttonEq_Click(object sender, EventArgs e)
         {
-            if (num1String != "" && num2String != "" && operatorInput != "")
+            if (num1String != "" && textBox1.Text != "" && operatorInput != "")
             {
                 num1 = Int32.Parse(num1String);
-                num2 = Int32.Parse(num2String);
+                num2 = Int32.Parse(textBox1.Text);
                 if (operatorInput.Equals("-"))
                 {
                     output = num1 - num2;
@@ -157,17 +80,17 @@ namespace RealCalculator
                 {
                     output = num1 + num2;
                 }
-                else if (operatorInput.Equals("x"))
+                else if (operatorInput.Equals("*"))
                 {
                     output = num1 * num2;
                 }
                 else if (operatorInput.Equals("/"))
                 {
-                    output = (float) num1 / num2;
+                    output = (float)num1 / num2;
                 }
                 textBox1.Text = "" + output;
                 calculationCompleted = true;
-            }  
+            }
         }
 
         private void buttonClear_Click(object sender, EventArgs e)
@@ -178,7 +101,6 @@ namespace RealCalculator
         public void clearInputAndOutput()
         {
             num1String = "";
-            num2String = "";
             num1 = 0;
             num2 = 0;
             textBox1.Text = "";

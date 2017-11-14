@@ -91,6 +91,10 @@ namespace RealCalculator
                 textBox1.Text = "" + output;
                 calculationCompleted = true;
             }
+            else if (textBox1.Text == "+" || textBox1.Text == "-" || textBox1.Text == "*" || textBox1.Text == "/")
+            {
+                MessageBox.Show("Please enter the second half of your expression.");
+            }
         }
 
         private void buttonClear_Click(object sender, EventArgs e)

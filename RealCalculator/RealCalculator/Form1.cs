@@ -13,9 +13,9 @@ namespace RealCalculator
     public partial class Calculator : Form
     {
         int num1;
-        string num1String;
+        string num1String = "";
         int num2;
-        string num2String;
+        string num2String = "";
         string operatorInput = "";
         Boolean isOperatorSelected = false;
         float output;
@@ -61,10 +61,12 @@ namespace RealCalculator
             else if (num1String == "")
             {
                 MessageBox.Show("Please enter some numbers before selecting an operator.");
+                textBox1.Text = "";
             }
             else
             {
                 MessageBox.Show("An operator has already been selected, please press '=' or continue entering numbers.");
+                textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1);
             }
         }
 

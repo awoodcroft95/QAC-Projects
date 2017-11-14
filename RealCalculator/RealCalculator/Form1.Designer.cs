@@ -51,6 +51,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(13, 12);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(259, 20);
             this.textBox1.TabIndex = 0;
             // 
@@ -218,7 +219,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 228);
+            this.ClientSize = new System.Drawing.Size(284, 217);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.buttonDiv);
             this.Controls.Add(this.buttonEq);
@@ -236,7 +237,11 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(300, 256);
+            this.MinimumSize = new System.Drawing.Size(300, 256);
             this.Name = "Calculator";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Calculator";
             this.ResumeLayout(false);
             this.PerformLayout();

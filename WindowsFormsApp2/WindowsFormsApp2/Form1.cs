@@ -12,18 +12,64 @@ namespace WindowsFormsApp2
 {
     public partial class Form1 : Form
     {
+        int a, b;
+        float c;
+
+        
+
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void button1_MouseMove(object sender, MouseEventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            int a, b, c;
-            a = Int32.Parse(textBox1.Text);
-            b = Int32.Parse(textBox2.Text);
+            getInputs();
             c = a + b;
             textBox3.Text = c.ToString();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            getInputs();
+            c = a * b;
+            textBox3.Text = c.ToString();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            getInputs();
+            c = (float) a / b;
+            textBox3.Text = c.ToString();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            getInputs();
+            c = a - b;
+            textBox3.Text = c.ToString();
+        }
+
+
+
+        public void getInputs()
+        {
+            if (textBox1.Text.Equals(""))
+            {
+                MessageBox.Show("First Number is Missing");
+                textBox1.Focus();
+            }
+            else if (textBox2.Text.Equals(""))
+            {
+                MessageBox.Show("Second Number is Missing");
+                textBox2.Focus();
+            }
+            else
+            {
+                a = Int32.Parse(textBox1.Text);
+                b = Int32.Parse(textBox2.Text);
+            }
+        }
+
     }
 }

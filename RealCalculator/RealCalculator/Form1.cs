@@ -15,7 +15,6 @@ namespace RealCalculator
         int num1;
         string num1String = "";
         int num2;
-        string num2String = "";
         string operatorInput = "";
         Boolean isOperatorSelected = false;
         float output;
@@ -66,6 +65,7 @@ namespace RealCalculator
                 textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1);
             }
         }
+
         private void buttonEq_Click(object sender, EventArgs e)
         {
             if (num1String != "" && textBox1.Text != "" && operatorInput != "")

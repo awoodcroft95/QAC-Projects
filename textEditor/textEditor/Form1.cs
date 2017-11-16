@@ -34,12 +34,15 @@ namespace textEditor
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            openFileDialog.ShowDialog();
-            if (openFileDialog.FileName != "")
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 richTB.LoadFile(openFileDialog.FileName);
                 hasBeenLoaded = true;
                 fileName = openFileDialog.FileName;
+            }
+            else
+            {
+                return;
             }
         }
 

@@ -114,6 +114,10 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
+            // saveFileDialog
+            // 
+            this.saveFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
+            // 
             // openFileDialog
             // 
             this.openFileDialog.FileName = "openFileDialog1";

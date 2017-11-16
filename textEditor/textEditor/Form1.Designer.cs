@@ -120,7 +120,6 @@
             // 
             // openFileDialog
             // 
-            this.openFileDialog.FileName = "openFileDialog1";
             this.openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
             // 
             // formatToolStripMenuItem

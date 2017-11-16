@@ -1,0 +1,67 @@
+<html>
+<input id="tb1" onmouseenter="mouseEnter()" value="THE SHAFEEQ">
+
+<body onmousemove="moving()"></body>
+<span id="data" style="position:absolute; top:100; left:100;">QA Consulting</span>
+<br>
+<br>
+<br>
+<b>
+<div id="increase" style="font-size:100px; position:absolute; left:1px;" onmousemove="increaseFont()">
+    +
+</div>
+<br>
+<br>
+<br>
+<div id="decrease" style="font-size:100px; position:absolute; left:1px; top:200px;" onmousemove="decreaseFont()">&nbsp;-</div>
+</b>
+<br><br><br>
+<div id="red" style="color:red; position:absolute; right:1px; border-style:solid; border-width:10px; border-color:red" onmousemove="changeColour(this.id)">Red</div>
+<br><br><br>
+<div id="blue" style="color:blue; position:absolute; right:1px; border-style:solid; border-width:10px; border-color:blue" onmousemove="changeColour(this.id)">Blue</div>
+<br><br><br>
+<div id="green" style="color:green; position:absolute; right:1px; border-style:solid; border-width:10px; border-color:green" onmousemove="changeColour(this.id)">Green</div>
+
+
+<script>
+    let data = window.document.getElementById("data");
+    let textBox = window.document.getElementById("tb1");
+    let minus = window.document.getElementById("decrease");
+    let plus = window.document.getElementById("increase");
+    let size = 20;
+    function moving() {
+        data.style.top = window.event.clientY;
+        data.style.left = window.event.clientX;
+    }
+
+    function mouseEnter() {
+        data.innerHTML = textBox.value;
+    }
+
+    function increaseFont() {
+        size++
+        data.style.fontSize = size;
+    }
+
+    function decreaseFont() {
+        if (size < 5) {
+            data.style.fontSize = 5;
+        }
+        else {
+            size--;
+            data.style.fontSize = size;
+        }
+    }
+
+    function changeColour(id){
+        if(id ==="red"){
+            data.style.color = "red";
+        } else if (id === "blue"){
+            data.style.color = "blue";
+        } else if (id === "green"){
+            data.style.color = "green";
+        }
+    }
+</script>
+
+</html>

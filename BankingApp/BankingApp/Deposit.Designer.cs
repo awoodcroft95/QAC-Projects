@@ -32,19 +32,19 @@
             this.accNo = new System.Windows.Forms.Label();
             this.searchButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.nameBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.addressBox = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.accountTypeBox = new System.Windows.Forms.TextBox();
-            this.genderBox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.confirmButton = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.balanceBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label6 = new System.Windows.Forms.Label();
-            this.confirmButton = new System.Windows.Forms.Button();
+            this.genderBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.accountTypeBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.addressBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.nameBox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
@@ -55,6 +55,7 @@
             this.accNoBox.Name = "accNoBox";
             this.accNoBox.Size = new System.Drawing.Size(100, 20);
             this.accNoBox.TabIndex = 0;
+            this.accNoBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.searchConfirm);
             // 
             // accNo
             // 
@@ -95,73 +96,31 @@
             this.panel1.Size = new System.Drawing.Size(241, 215);
             this.panel1.TabIndex = 3;
             // 
-            // nameBox
+            // confirmButton
             // 
-            this.nameBox.Location = new System.Drawing.Point(108, 12);
-            this.nameBox.Name = "nameBox";
-            this.nameBox.ReadOnly = true;
-            this.nameBox.Size = new System.Drawing.Size(100, 20);
-            this.nameBox.TabIndex = 0;
+            this.confirmButton.Location = new System.Drawing.Point(107, 172);
+            this.confirmButton.Name = "confirmButton";
+            this.confirmButton.Size = new System.Drawing.Size(75, 23);
+            this.confirmButton.TabIndex = 12;
+            this.confirmButton.Text = "Confirm";
+            this.confirmButton.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // label6
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(64, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Name:";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(13, 148);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(85, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Deposit Amount:";
             // 
-            // label2
+            // numericUpDown1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(54, 41);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Address:";
-            // 
-            // addressBox
-            // 
-            this.addressBox.Location = new System.Drawing.Point(108, 38);
-            this.addressBox.Name = "addressBox";
-            this.addressBox.ReadOnly = true;
-            this.addressBox.Size = new System.Drawing.Size(100, 20);
-            this.addressBox.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 69);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Account Type:";
-            // 
-            // accountTypeBox
-            // 
-            this.accountTypeBox.Location = new System.Drawing.Point(108, 66);
-            this.accountTypeBox.Name = "accountTypeBox";
-            this.accountTypeBox.ReadOnly = true;
-            this.accountTypeBox.Size = new System.Drawing.Size(100, 20);
-            this.accountTypeBox.TabIndex = 5;
-            // 
-            // genderBox
-            // 
-            this.genderBox.Location = new System.Drawing.Point(108, 92);
-            this.genderBox.Name = "genderBox";
-            this.genderBox.ReadOnly = true;
-            this.genderBox.Size = new System.Drawing.Size(100, 20);
-            this.genderBox.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(54, 95);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Gender:";
+            this.numericUpDown1.DecimalPlaces = 2;
+            this.numericUpDown1.Location = new System.Drawing.Point(107, 146);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(101, 20);
+            this.numericUpDown1.TabIndex = 10;
             // 
             // balanceBox
             // 
@@ -180,31 +139,73 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Current Balance:";
             // 
-            // numericUpDown1
+            // genderBox
             // 
-            this.numericUpDown1.DecimalPlaces = 2;
-            this.numericUpDown1.Location = new System.Drawing.Point(107, 146);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(101, 20);
-            this.numericUpDown1.TabIndex = 10;
+            this.genderBox.Location = new System.Drawing.Point(108, 92);
+            this.genderBox.Name = "genderBox";
+            this.genderBox.ReadOnly = true;
+            this.genderBox.Size = new System.Drawing.Size(100, 20);
+            this.genderBox.TabIndex = 7;
             // 
-            // label6
+            // label4
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(13, 148);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(85, 13);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Deposit Amount:";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(54, 95);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(45, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Gender:";
             // 
-            // confirmButton
+            // accountTypeBox
             // 
-            this.confirmButton.Location = new System.Drawing.Point(107, 172);
-            this.confirmButton.Name = "confirmButton";
-            this.confirmButton.Size = new System.Drawing.Size(75, 23);
-            this.confirmButton.TabIndex = 12;
-            this.confirmButton.Text = "Confirm";
-            this.confirmButton.UseVisualStyleBackColor = true;
+            this.accountTypeBox.Location = new System.Drawing.Point(108, 66);
+            this.accountTypeBox.Name = "accountTypeBox";
+            this.accountTypeBox.ReadOnly = true;
+            this.accountTypeBox.Size = new System.Drawing.Size(100, 20);
+            this.accountTypeBox.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(25, 69);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(77, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Account Type:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(54, 41);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Address:";
+            // 
+            // addressBox
+            // 
+            this.addressBox.Location = new System.Drawing.Point(108, 38);
+            this.addressBox.Name = "addressBox";
+            this.addressBox.ReadOnly = true;
+            this.addressBox.Size = new System.Drawing.Size(100, 20);
+            this.addressBox.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(64, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Name:";
+            // 
+            // nameBox
+            // 
+            this.nameBox.Location = new System.Drawing.Point(108, 12);
+            this.nameBox.Name = "nameBox";
+            this.nameBox.ReadOnly = true;
+            this.nameBox.Size = new System.Drawing.Size(100, 20);
+            this.nameBox.TabIndex = 0;
             // 
             // Deposit
             // 

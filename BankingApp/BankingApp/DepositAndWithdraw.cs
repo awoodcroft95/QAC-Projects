@@ -53,11 +53,12 @@ namespace BankingApp
         {
             SqlConnection con = MainMenu.DBConnection;
             cmd = con.CreateCommand();
-            cmd.CommandText = $"select * from Accounts where accNo ='{accNoBox.Text}'";
+            cmd.CommandText = $"select * from Accounts where accNo ='{accNoBox.Text.ToUpper()}'";
             SqlDataReader data = cmd.ExecuteReader();
             if (!data.Read())
             {
                 MessageBox.Show("Invalid account number");
+                data.Close();
             }
             else
             {
@@ -67,12 +68,12 @@ namespace BankingApp
                 }
                 else
                 {
-                    accountNo = accNoBox.Text;
+                    accountNo = accNoBox.Text.ToUpper(); ;
                     nameBox.Text = data["Name"].ToString();
                     addressBox.Text = data["Address"].ToString();
-                    accountTypeBox.Text = accNoBox.Text.Substring(0, 1).Equals("C") ? "Current" : "Savings";
-                    genderBox.Text = accNoBox.Text.Substring(1, 1).Equals("M") ? "Male" : "Female";
-                    cmd.CommandText = $"select sum(deposits.amount)-sum(Withdraws.amount) as balance from deposits,withdraws where deposits.accno=withdraws.accno and deposits.accno='{accountNo}'";
+                    accountTypeBox.Text = accountNo.Substring(0, 1).Equals("C") ? "Current" : "Savings";
+                    genderBox.Text = accountNo.Substring(1, 1).Equals("M") ? "Male" : "Female";
+                    cmd.CommandText = $"select sum(deposits.amount)-sum(withdraws.amount) as balance from deposits,withdraws where deposits.accno=withdraws.accno and deposits.accno='{accountNo}'"; //broken!!!
                     data.Close();
                     SqlDataReader balanceData = cmd.ExecuteReader();
                     if (balanceData.Read())
@@ -108,7 +109,7 @@ namespace BankingApp
                 try
                 {
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show($"£{withdrawAmount} deposited into account:{accountNo}");
+                    MessageBox.Show($"£{withdrawAmount} withdrew from account:{accountNo}");
                 }
                 catch
                 {
@@ -127,10 +128,12 @@ namespace BankingApp
             if (windowType.Equals("deposit"))
             {
                 handleDeposit();
+                handleSearch();
             }
             else if (windowType.Equals("withdraw"))
             {
                 handleWithdraw();
+                handleSearch();
             }
         }
     }

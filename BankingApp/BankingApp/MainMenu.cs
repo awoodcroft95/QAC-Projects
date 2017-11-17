@@ -22,7 +22,7 @@ namespace BankingApp
         }
 
         private CreateNewAccount newAccountWindow;
-        private Deposit newDepositWindow;
+        private DepositAndWithdraw newDepositAndWithdrawWindow;
         public MainMenu()
         {
             InitializeComponent();
@@ -30,7 +30,7 @@ namespace BankingApp
             con.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Admin\\Documents\\AWCSharpProjects\\BankingApp\\BankingApp\\BankDatabase.mdf;Integrated Security=True";
             con.Open();
             newAccountWindow = new CreateNewAccount();
-            newDepositWindow = new Deposit();
+            newDepositAndWithdrawWindow = new DepositAndWithdraw();
         }
 
         private void MainMenu_Load(object sender, EventArgs e)
@@ -44,7 +44,14 @@ namespace BankingApp
 
         private void depositToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            newDepositWindow.Show();
+            newDepositAndWithdrawWindow.Show();
+            newDepositAndWithdrawWindow.setWindowType("deposit");
+        }
+
+        private void withdrawToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            newDepositAndWithdrawWindow.Show();
+            newDepositAndWithdrawWindow.setWindowType("withdraw");
         }
     }
 }

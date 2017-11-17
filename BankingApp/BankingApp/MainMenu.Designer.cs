@@ -30,12 +30,12 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.accountsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.transactionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createNewAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewAccountsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deactivateAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.transactionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.depositToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.withdrawToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.balacnceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,17 +65,6 @@
             this.accountsToolStripMenuItem.Name = "accountsToolStripMenuItem";
             this.accountsToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.accountsToolStripMenuItem.Text = "Accounts";
-            // 
-            // transactionsToolStripMenuItem
-            // 
-            this.transactionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.depositToolStripMenuItem,
-            this.withdrawToolStripMenuItem,
-            this.balacnceToolStripMenuItem,
-            this.statementToolStripMenuItem});
-            this.transactionsToolStripMenuItem.Name = "transactionsToolStripMenuItem";
-            this.transactionsToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
-            this.transactionsToolStripMenuItem.Text = "Transactions";
             // 
             // createNewAccountToolStripMenuItem
             // 
@@ -108,6 +97,17 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
+            // transactionsToolStripMenuItem
+            // 
+            this.transactionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.depositToolStripMenuItem,
+            this.withdrawToolStripMenuItem,
+            this.balacnceToolStripMenuItem,
+            this.statementToolStripMenuItem});
+            this.transactionsToolStripMenuItem.Name = "transactionsToolStripMenuItem";
+            this.transactionsToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
+            this.transactionsToolStripMenuItem.Text = "Transactions";
+            // 
             // depositToolStripMenuItem
             // 
             this.depositToolStripMenuItem.Name = "depositToolStripMenuItem";
@@ -120,6 +120,7 @@
             this.withdrawToolStripMenuItem.Name = "withdrawToolStripMenuItem";
             this.withdrawToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.withdrawToolStripMenuItem.Text = "Withdraw";
+            this.withdrawToolStripMenuItem.Click += new System.EventHandler(this.withdrawToolStripMenuItem_Click);
             // 
             // balacnceToolStripMenuItem
             // 

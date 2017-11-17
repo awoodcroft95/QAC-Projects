@@ -1,6 +1,6 @@
 ﻿namespace BankingApp
 {
-    partial class Deposit
+    partial class DepositAndWithdraw
     {
         /// <summary>
         /// Required designer variable.
@@ -33,8 +33,8 @@
             this.searchButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.confirmButton = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.transactionTypeLabel = new System.Windows.Forms.Label();
+            this.inputBox = new System.Windows.Forms.NumericUpDown();
             this.balanceBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.genderBox = new System.Windows.Forms.TextBox();
@@ -46,7 +46,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.nameBox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inputBox)).BeginInit();
             this.SuspendLayout();
             // 
             // accNoBox
@@ -79,8 +79,8 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.confirmButton);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.numericUpDown1);
+            this.panel1.Controls.Add(this.transactionTypeLabel);
+            this.panel1.Controls.Add(this.inputBox);
             this.panel1.Controls.Add(this.balanceBox);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.genderBox);
@@ -104,23 +104,24 @@
             this.confirmButton.TabIndex = 12;
             this.confirmButton.Text = "Confirm";
             this.confirmButton.UseVisualStyleBackColor = true;
+            this.confirmButton.Click += new System.EventHandler(this.confirmButton_Click);
             // 
-            // label6
+            // transactionTypeLabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(13, 148);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(85, 13);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Deposit Amount:";
+            this.transactionTypeLabel.AutoSize = true;
+            this.transactionTypeLabel.Location = new System.Drawing.Point(13, 148);
+            this.transactionTypeLabel.Name = "transactionTypeLabel";
+            this.transactionTypeLabel.Size = new System.Drawing.Size(85, 13);
+            this.transactionTypeLabel.TabIndex = 11;
+            this.transactionTypeLabel.Text = "Deposit Amount:";
             // 
-            // numericUpDown1
+            // inputBox
             // 
-            this.numericUpDown1.DecimalPlaces = 2;
-            this.numericUpDown1.Location = new System.Drawing.Point(107, 146);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(101, 20);
-            this.numericUpDown1.TabIndex = 10;
+            this.inputBox.DecimalPlaces = 2;
+            this.inputBox.Location = new System.Drawing.Point(107, 146);
+            this.inputBox.Name = "inputBox";
+            this.inputBox.Size = new System.Drawing.Size(101, 20);
+            this.inputBox.TabIndex = 10;
             // 
             // balanceBox
             // 
@@ -207,7 +208,7 @@
             this.nameBox.Size = new System.Drawing.Size(100, 20);
             this.nameBox.TabIndex = 0;
             // 
-            // Deposit
+            // DepositAndWithdraw
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -216,11 +217,10 @@
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.accNo);
             this.Controls.Add(this.accNoBox);
-            this.Name = "Deposit";
-            this.Text = "Deposit";
+            this.Name = "DepositAndWithdraw";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inputBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,8 +233,8 @@
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button confirmButton;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label transactionTypeLabel;
+        private System.Windows.Forms.NumericUpDown inputBox;
         private System.Windows.Forms.TextBox balanceBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox genderBox;

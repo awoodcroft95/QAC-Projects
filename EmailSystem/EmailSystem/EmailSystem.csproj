@@ -79,14 +79,26 @@
     <Content Include="App_Data\EmailDatabase_log.ldf">
       <DependentUpon>EmailDatabase.mdf</DependentUpon>
     </Content>
+    <Content Include="composeEmail.aspx" />
     <Content Include="EmailPage.aspx" />
+    <Content Include="emailSendOutput.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="handleEmailSelect.aspx" />
+    <Content Include="handleSendEmail.aspx" />
     <Content Include="inbox.aspx" />
     <Content Include="invalidLogin.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="validateLogin.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="composeEmail.aspx.cs">
+      <DependentUpon>composeEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="composeEmail.aspx.designer.cs">
+      <DependentUpon>composeEmail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="EmailPage.aspx.cs">
       <DependentUpon>EmailPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -94,8 +106,29 @@
     <Compile Include="EmailPage.aspx.designer.cs">
       <DependentUpon>EmailPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="emailSendOutput.aspx.cs">
+      <DependentUpon>emailSendOutput.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="emailSendOutput.aspx.designer.cs">
+      <DependentUpon>emailSendOutput.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="handleEmailSelect.aspx.cs">
+      <DependentUpon>handleEmailSelect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="handleEmailSelect.aspx.designer.cs">
+      <DependentUpon>handleEmailSelect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="handleSendEmail.aspx.cs">
+      <DependentUpon>handleSendEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="handleSendEmail.aspx.designer.cs">
+      <DependentUpon>handleSendEmail.aspx</DependentUpon>
     </Compile>
     <Compile Include="inbox.aspx.cs">
       <DependentUpon>inbox.aspx</DependentUpon>
@@ -119,6 +152,13 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="validateLogin.aspx.cs">
+      <DependentUpon>validateLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="validateLogin.aspx.designer.cs">
+      <DependentUpon>validateLogin.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />

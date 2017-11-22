@@ -14,6 +14,30 @@ namespace MVCPeople
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "Addition",
+                url: "add/{a}/{b}",
+                defaults: new { controller = "Math", action = "Add", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Subtraction",
+                url: "sub/{a}/{b}",
+                defaults: new { controller = "Math", action = "Subtract", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Multiplication",
+                url: "mult/{a}/{b}",
+                defaults: new { controller = "Math", action = "Multiply", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Division",
+                url: "div/{a}/{b}",
+                defaults: new { controller = "Math", action = "Divide", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

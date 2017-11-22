@@ -1,0 +1,14 @@
+﻿@model MVCModelUserData.Models.StudentClass
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Student Info</h2>
+
+Registration No: @Model.RegNo
+<br />
+Name: @Model.Name
+<br />
+Marks: @Model.Marks

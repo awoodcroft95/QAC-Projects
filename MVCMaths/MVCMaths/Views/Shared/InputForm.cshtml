@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "InputForm";
+}
+
+<h2>InputForm</h2>
+
+<form action="/Operations" method="post">
+    First No.: <input type="text" name="no1" value="" />
+    Second No.: <input type="text" name="no2" value="" />
+    <input type="hidden" name="operation" value=@ViewData["opt"] />
+    <input type="submit" name="submit button" value="Submit" />
+</form>

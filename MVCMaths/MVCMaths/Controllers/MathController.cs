@@ -14,34 +14,34 @@ namespace MVCMaths.Controllers
             return View();
         }
 
-        public ActionResult Operations(int no1, int no2, String operation)
-        {
-            float c = 0;
-            if (operation.Equals("add"))
-            {
-                c = no1 + no2;
-                ViewData["C"] = "Addition";
-            }
-            else if (operation.Equals("sub"))
-            {
-                c = no1 - no2;
-                ViewData["C"] = "Subtraction";
-            }
-            else if (operation.Equals("mult"))
-            {
-                c = no1 * no2;
-                ViewData["C"] = "Multiplication";
-            }
-            else if (operation.Equals("div"))
-            {
-                c = (float)no1 / no2;
-                ViewData["C"] = "Division";
-            }
+        //public ActionResult Operations(int no1, int no2, String operation)
+        //{
+        //    float c = 0;
+        //    if (operation.Equals("add"))
+        //    {
+        //        c = no1 + no2;
+        //        ViewData["C"] = "Addition";
+        //    }
+        //    else if (operation.Equals("sub"))
+        //    {
+        //        c = no1 - no2;
+        //        ViewData["C"] = "Subtraction";
+        //    }
+        //    else if (operation.Equals("mult"))
+        //    {
+        //        c = no1 * no2;
+        //        ViewData["C"] = "Multiplication";
+        //    }
+        //    else if (operation.Equals("div"))
+        //    {
+        //        c = (float)no1 / no2;
+        //        ViewData["C"] = "Division";
+        //    }
 
-            ViewData["A"] = no1;
-            ViewData["B"] = no2;
-            ViewData["D"] = c;
-            return View();
-        }
+        //    ViewData["A"] = no1;
+        //    ViewData["B"] = no2;
+        //    ViewData["D"] = c;
+        //    return View();
+        //}
     }
 }

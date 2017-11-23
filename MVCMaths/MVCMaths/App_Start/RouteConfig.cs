@@ -38,9 +38,15 @@ namespace MVCMaths
             );
 
             routes.MapRoute(
-                name: "Operations",
-                url: "Operations",
-                defaults: new { controller = "Math", action = "Operations", id = UrlParameter.Optional }
+                name: "Operations1",
+                url: "Operation1",
+                defaults: new { controller = "Math1", action = "Operations", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Operations2",
+                url: "Operation2",
+                defaults: new { controller = "Math2", action = "Operations", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(

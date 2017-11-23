@@ -5,9 +5,21 @@
 
 <h2>InputForm</h2>
 
-<form action="/Operations" method="post">
+<form action="" method="post">
     First No.: <input type="text" name="no1" value="" />
     Second No.: <input type="text" name="no2" value="" />
-    <input type="hidden" name="operation" value=@ViewData["opt"] />
+    <input type="hidden" name="operation" value=@ViewData["opt"] id="operation"/>
     <input type="submit" name="submit button" value="Submit" />
 </form>
+
+<script>
+    var value = document.getElementById("operation").value;
+    if (value == "add" || value == "sub")
+    {
+        document.forms[0].action = "/Operation1";
+    }
+    else
+    {
+        document.forms[0].action = "/Operation2";
+    }
+</script>

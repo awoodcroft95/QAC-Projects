@@ -20,5 +20,25 @@ namespace MVCMaths.Controllers
             ViewData["opt"] = "sub";
             return View("InputForm");
         }
+
+        public ActionResult Operations(int no1, int no2, String operation)
+        {
+            int c = 0;
+            if (operation.Equals("add"))
+            {
+                c = no1 + no2;
+                ViewData["C"] = "Addition";
+            }
+            else if (operation.Equals("sub"))
+            {
+                c = no1 - no2;
+                ViewData["C"] = "Subtraction";
+            }
+
+            ViewData["A"] = no1;
+            ViewData["B"] = no2;
+            ViewData["D"] = c;
+            return View();
+        }
     }
 }

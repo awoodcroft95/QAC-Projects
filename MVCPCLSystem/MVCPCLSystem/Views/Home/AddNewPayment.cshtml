@@ -1,0 +1,22 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddNewPayment</title>
+</head>
+<body>
+    <div>
+        <form action="/InsertPayment" method="post">
+            Amount: <input type="text" name="amount" required/>
+            <input type="hidden" name="PID" value="@ViewData["PID"]" />
+            <input type="submit" />
+        </form>
+    </div>
+</body>
+</html>

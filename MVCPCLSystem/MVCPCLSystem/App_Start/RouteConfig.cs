@@ -32,6 +32,18 @@ namespace MVCPCLSystem
             );
 
             routes.MapRoute(
+                name: "AddNewPayment",
+                url: "AddPayment/{id}",
+                defaults: new { controller = "Home", action = "AddNewPayment", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "InsertNewPayment",
+                url: "InsertPayment",
+                defaults: new { controller = "Home", action = "InsertNewPayment", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
                 name: "Payment Details",
                 url: "payments/{id}",
                 defaults: new { controller = "Home", action = "PaymentDetails", id = UrlParameter.Optional }

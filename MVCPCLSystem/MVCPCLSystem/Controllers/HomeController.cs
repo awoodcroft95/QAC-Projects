@@ -81,5 +81,19 @@ namespace MVCPCLSystem.Controllers
             ViewData["PID"] = id;
             return View();
         }
+
+        public ActionResult AddNewPayment(int id)
+        {
+            ViewData["PID"] = id;
+            return View();
+        }
+
+        public ActionResult InsertNewPayment(Payment p)
+        {
+            SqlCommand cmd = getDB();
+            cmd.CommandText = $"insert into PaymentDetails values('{p.PID}', '{p.amount}', getdate())";
+            int a = cmd.ExecuteNonQuery();
+            return Redirect($"payments/{p.PID}");
+        }
     }
 }

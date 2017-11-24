@@ -32,6 +32,12 @@ namespace MVCPCLSystem
             );
 
             routes.MapRoute(
+                name: "Payment Details",
+                url: "payments/{id}",
+                defaults: new { controller = "Home", action = "PaymentDetails", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
                 name: "EditRecordForm",
                 url: "edit/{id}",
                 defaults: new { controller = "Home", action = "EditRecordForm", id = UrlParameter.Optional }

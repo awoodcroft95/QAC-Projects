@@ -1,5 +1,4 @@
 ﻿@using System.Data.SqlClient;
-
 @{
     Layout = null;
 }
@@ -9,7 +8,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <title>PaymentDetails</title>
 </head>
 <body>
     <div> 
@@ -18,28 +17,19 @@
             con.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Admin\\Documents\\AWCSharpProjects\\MVCPCLSystem\\MVCPCLSystem\\App_Data\\PCLDatabase.mdf;Integrated Security=True";
             con.Open();
             SqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = "select * from AccountHolder";
+            cmd.CommandText = $"select * from PaymentDetails where PID = {ViewData["PID"]}";
             SqlDataReader data = cmd.ExecuteReader();
-            Response.Write("<table border='2'><tr><th>Serial No.</th><th>Name</th><th>Address</th><th>Phone Number</th><th>Operations</th></tr>");
+            Response.Write("<table border='2'><tr><th>Serial No.</th><th>Amount</th><th>Data</th></tr>");
             int i = 1;
             while (data.Read())
             {
 
-                Response.Write($"<tr><td>{i}</td><td><a href='/payments/{data["PID"]}'>{data["Name"]}</a></td><td>{data["Address"]}</td><td>{data["Phone"]}</td><td><a href='/edit/{data["PID"]}'>Edit</a> / <a href='/delete/{data["PID"]}' onclick='return confirmInput()'>Delete</a></td></tr>");
+                Response.Write($"<tr><td>{i}</td><td>{data["Amount"]}</td><td>{data["Date"]}</td></tr>");
                 i++;
             }
             Response.Write("</table>");
             data.Close();
         }
     </div>
-    <div>
-        <a href="/NewRecord">New Record</a>
-    </div>
 </body>
 </html>
-
-<script> 
-    function confirmInput() {
-        return confirm("Delete Record?");
-    }
-</script>

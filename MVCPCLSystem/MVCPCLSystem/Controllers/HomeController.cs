@@ -75,5 +75,11 @@ namespace MVCPCLSystem.Controllers
             cmd.ExecuteNonQuery();
             return View("Index");
         }
+
+        public ActionResult PaymentDetails(int id)
+        {
+            ViewData["PID"] = id;
+            return View();
+        }
     }
 }
